@@ -1,7 +1,7 @@
+
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { 
-  HiMapPin, 
   HiOutlineMapPin,
   HiClock,
   HiCalendar,
@@ -10,7 +10,7 @@ import {
 import { MdLocationOn } from 'react-icons/md';
 import BottomTab from './BottomTab';
 import { attendanceAPI, authAPI } from '../services/api';
-import useLocationService from '../services/location'; // Updated import
+import useLocationService from '../services/location';
 
 const HomePage = () => {
   const [punchInTime, setPunchInTime] = useState('--:--:--');
@@ -127,9 +127,10 @@ const HomePage = () => {
       setLocationPermission(permission);
 
       if (permission === 'granted') {
-        getCurrentLocation();
+        await getCurrentLocation();
         startLocationTracking();
       } else if (permission === 'prompt') {
+        // Auto-request location when permission is prompt
         await getCurrentLocation();
       }
     } catch (error) {
@@ -150,6 +151,7 @@ const HomePage = () => {
         setCurrentLocation(location);
         setLocationError('');
         
+        // Update address when location changes
         locationService.getAddressFromCoordinates(location.latitude, location.longitude)
           .then(address => {
             if (address) {
@@ -168,24 +170,22 @@ const HomePage = () => {
     setLocationError('');
     
     try {
-      const location = await locationService.getCurrentLocation();
+      const location = await locationService.getLocationWithAddress();
       setCurrentLocation(location);
       
-      const address = await locationService.getAddressFromCoordinates(
-        location.latitude, 
-        location.longitude
-      );
-      
-      if (address) {
-        setLocationAddress(address.formattedAddress);
+      if (location.formattedAddress) {
+        setLocationAddress(location.formattedAddress);
+      } else if (location.address) {
+        setLocationAddress(location.address);
       } else {
         setLocationAddress(`Lat: ${location.latitude.toFixed(4)}, Lon: ${location.longitude.toFixed(4)}`);
       }
       
+      setLocationPermission('granted');
       return location;
     } catch (error) {
       console.error('Failed to get location:', error);
-      setLocationError('Location permission required. Please enable location access.');
+      setLocationError(error.message);
       return null;
     } finally {
       setLoading(false);
@@ -417,28 +417,12 @@ const HomePage = () => {
       return;
     }
 
-    // Check location permission
-    if (locationPermission !== 'granted') {
-      const shouldProceed = window.confirm(
-        'Location access is required for punching in. Do you want to enable location access?'
-      );
-      if (shouldProceed) {
-        await requestLocationPermission();
-        if (locationPermission !== 'granted') {
-          alert('Location permission is required to punch in.');
-          return;
-        }
-      } else {
-        return;
-      }
-    }
-
-    // Get current location
+    // Get current location first
     let location = currentLocation;
     if (!location) {
       location = await getCurrentLocation();
       if (!location) {
-        alert('Unable to get current location. Please enable location services.');
+        alert('Unable to get current location. Location permission is required to punch in.');
         return;
       }
     }
@@ -472,7 +456,7 @@ const HomePage = () => {
         alert('Punched in successfully!');
         
         // Start real-time tracking after punch in
-        if (!currentLocation) {
+        if (!locationPermission) {
           startLocationTracking();
         }
       } else {
@@ -504,7 +488,7 @@ const HomePage = () => {
     if (!location) {
       location = await getCurrentLocation();
       if (!location) {
-        alert('Unable to get location. Please enable location services.');
+        alert('Unable to get location. Location permission is required to punch out.');
         return;
       }
     }
@@ -583,34 +567,8 @@ const HomePage = () => {
     }
   };
 
-  const requestLocationPermission = async () => {
-    setLoading(true);
-    setLocationError('');
-    
-    try {
-      const location = await getCurrentLocation();
-      
-      if (location) {
-        setLocationPermission('granted');
-        startLocationTracking();
-      }
-    } catch (error) {
-      if (error.code === 1) {
-        setLocationPermission('denied');
-        setLocationError('Location permission denied. Please enable location access in browser settings.');
-      }
-    } finally {
-      setLoading(false);
-    }
-  };
-
   const refreshLocation = async () => {
     await getCurrentLocation();
-  };
-
-  const handleLogout = () => {
-    authAPI.logout();
-    navigate('/login');
   };
 
   if (loading && !userInfo) {
@@ -656,7 +614,7 @@ const HomePage = () => {
             </div>
             <button 
               className="ios-permission-button"
-              onClick={requestLocationPermission}
+              onClick={getCurrentLocation}
               disabled={loading}
             >
               {loading ? 'Requesting...' : 'Enable'}
@@ -745,7 +703,7 @@ const HomePage = () => {
         {!hasCompletedAttendance && (
           <div className="ios-list-card">
             <div className="ios-list-header">
-              <h3 className="ios-list-title">Live Location</h3>
+              <h3 className="ios-list-title">Current Location</h3>
               <span className="ios-badge">
                 {currentLocation ? 'Active' : 'Offline'}
               </span>
@@ -756,7 +714,6 @@ const HomePage = () => {
                 <MdLocationOn size={24} color="#007AFF" />
               </div>
               <div className="ios-location-details">
-                <div className="ios-location-title">Current Location</div>
                 <div className="ios-location-address">
                   {locationAddress}
                 </div>
@@ -779,24 +736,6 @@ const HomePage = () => {
               >
                 <HiOutlineMapPin size={20} />
               </button>
-            </div>
-            
-            <div className="ios-map-placeholder">
-              {currentLocation ? (
-                <>
-                  <MdLocationOn size={32} color="#34C759" />
-                  <span>Location Available</span>
-                  {currentLocation.accuracy && (
-                    <small>Accuracy: ±{Math.round(currentLocation.accuracy)} meters</small>
-                  )}
-                </>
-              ) : (
-                <>
-                  <HiMapPin size={32} color="#8E8E93" />
-                  <span>Waiting for location...</span>
-                  <small>Tap refresh button above</small>
-                </>
-              )}
             </div>
           </div>
         )}
@@ -845,7 +784,7 @@ const HomePage = () => {
                   <span>Processing...</span>
                 ) : (
                   <>
-                    <span>Slide to Punch Out</span>
+                    <span>Click Punch Out</span>
                     <div className="ios-slide-indicator">→</div>
                   </>
                 )}
@@ -865,7 +804,7 @@ const HomePage = () => {
                   <span>Enable Location First</span>
                 ) : (
                   <>
-                    <span>Slide to Punch In</span>
+                    <span>Click to Punch In</span>
                     <div className="ios-slide-indicator">→</div>
                   </>
                 )}
@@ -881,16 +820,6 @@ const HomePage = () => {
             </div>
           </div>
         )}
-
-        {/* Logout Button */}
-        <div className="ios-action-container">
-          <button 
-            className="ios-action-button ios-action-button-secondary" 
-            onClick={handleLogout}
-          >
-            <span>Logout</span>
-          </button>
-        </div>
       </div>
 
       <BottomTab />

@@ -1,4 +1,4 @@
-/* iOS Design System */
+/* iOS Design System - Compact Card Styles */
 * {
   margin: 0;
   padding: 0;
@@ -24,19 +24,19 @@ body {
 }
 
 .ios-content {
-  padding: 16px;
+  padding: 10px;
   padding-top: 0;
 }
 
 /* iOS Status Bar */
 .ios-status-bar {
-  /* height: 44px; */
+  height: 20px;
   background: transparent;
 }
 
-/* iOS Headers */
+/* iOS Headers - Compact */
 .ios-header {
-  padding: 16px;
+  padding: 12px 14px 10px;
   background: #FFFFFF;
   border-bottom: 0.5px solid #C6C6C8;
 }
@@ -48,7 +48,7 @@ body {
 }
 
 .ios-header-title {
-  font-size: 25px;
+  font-size: 22px;
   font-weight: 700;
   color: #1C1C1E;
   letter-spacing: -0.4px;
@@ -58,26 +58,36 @@ body {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 15px;
+  font-size: 14px;
   color: #8E8E93;
 }
 
-/* iOS Cards */
+.ios-user-badge {
+  background: #F2F2F7;
+  padding: 4px 10px;
+  border-radius: 16px;
+  font-size: 12px;
+  color: #8E8E93;
+  margin-top: 4px;
+  display: inline-block;
+}
+
+/* iOS Cards - Compact */
 .ios-widget-card, .ios-list-card, .ios-profile-card {
   background: #FFFFFF;
-  border-radius: 16px;
-  padding: 20px;
-  margin-bottom: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
   border: 0.5px solid #E5E5EA;
 }
 
-/* Working Hours Widget */
+/* Working Hours Widget - Compact */
 .ios-widget-header {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 20px;
+  gap: 6px;
+  margin-bottom: 14px;
 }
 
 .ios-widget-icon {
@@ -85,7 +95,7 @@ body {
 }
 
 .ios-widget-header h3 {
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 600;
   color: #1C1C1E;
 }
@@ -94,7 +104,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: 3px;
 }
 
 .ios-time-unit {
@@ -102,7 +112,7 @@ body {
 }
 
 .ios-time-value {
-  font-size: 44px;
+  font-size: 36px;
   font-weight: 700;
   color: #1C1C1E;
   line-height: 1;
@@ -110,67 +120,67 @@ body {
 }
 
 .ios-time-label {
-  font-size: 12px;
+  font-size: 11px;
   color: #8E8E93;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-top: 4px;
+  letter-spacing: 0.3px;
+  margin-top: 2px;
 }
 
 .ios-time-separator {
-  font-size: 44px;
+  font-size: 36px;
   font-weight: 700;
   color: #C6C6C8;
-  margin: 0 2px;
+  margin: 0 1px;
 }
 
-/* iOS List Styles */
+/* iOS List Styles - Compact */
 .ios-list-title {
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 600;
   color: #1C1C1E;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .ios-list-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .ios-badge {
   background: #FFE5E5;
   color: #FF3B30;
-  font-size: 13px;
-  padding: 4px 10px;
-  border-radius: 20px;
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 12px;
   font-weight: 500;
 }
 
 .ios-list {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
 }
 
 .ios-list-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4px 0;
+  padding: 3px 0;
 }
 
 .ios-list-item-left {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .ios-indicator {
-  width: 8px;
-  height: 8px;
-  border-radius: 4px;
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
 }
 
 .ios-indicator-green {
@@ -182,7 +192,7 @@ body {
 }
 
 .ios-list-item-right {
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 500;
   color: #1C1C1E;
 }
@@ -190,11 +200,11 @@ body {
 .ios-list-divider {
   height: 0.5px;
   background: #E5E5EA;
-  margin: 12px 0;
+  margin: 8px 0;
 }
 
 .ios-list-item-total {
-  padding-top: 12px;
+  padding-top: 10px;
   border-top: 0.5px solid #E5E5EA;
 }
 
@@ -203,75 +213,102 @@ body {
   font-weight: 600;
 }
 
-/* Location Preview */
+/* Location Preview - Compact */
 .ios-location-preview {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 12px;
+  gap: 10px;
+  padding: 10px;
   background: #F2F2F7;
-  border-radius: 12px;
-  margin-bottom: 12px;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
 .ios-location-icon {
   background: #FFFFFF;
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .ios-location-details {
   flex: 1;
 }
 
-.ios-location-title {
-  font-size: 15px;
-  font-weight: 600;
-  color: #1C1C1E;
-}
-
 .ios-location-address {
   font-size: 13px;
-  color: #8E8E93;
-  margin-top: 2px;
+  color: #1C1C1E;
+  margin-bottom: 4px;
+  line-height: 1.3;
 }
 
-.ios-map-placeholder {
-  height: 120px;
-  background: #F2F2F7;
-  border-radius: 12px;
+.ios-location-coords {
+  font-size: 11px;
+  color: #8E8E93;
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.ios-accuracy {
+  background: #E5E5EA;
+  padding: 1px 6px;
+  border-radius: 8px;
+  font-size: 10px;
+  color: #8E8E93;
+}
+
+.ios-location-refresh {
+  background: #F2F2F7;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  color: #8E8E93;
-  font-size: 15px;
+  cursor: pointer;
+  color: #007AFF;
+  transition: all 0.2s ease;
 }
 
-/* iOS Action Button */
+.ios-location-refresh:hover {
+  background: #E5E5EA;
+}
+
+.ios-location-refresh:active {
+  transform: scale(0.95);
+}
+
+.ios-location-refresh:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* iOS Action Button - Compact */
 .ios-action-container {
-  padding: 24px 16px;
+  padding: 20px 12px;
 }
 
 .ios-action-button {
   width: 100%;
-  height: 56px;
+  height: 52px;
   background: #007AFF;
   border: none;
-  border-radius: 14px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #FFFFFF;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 600;
-  gap: 8px;
+  gap: 6px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
@@ -285,20 +322,28 @@ body {
   background: linear-gradient(135deg, #FF3B30, #FF6255);
 }
 
-.ios-action-button-disabled {
-  background: #C6C6C8;
+.ios-action-button-green {
+  background: linear-gradient(135deg, #34C759, #5CDB7C);
+}
+
+.ios-action-button-secondary {
+  background: #8E8E93;
+}
+
+.ios-action-button:disabled {
+  opacity: 0.6;
   cursor: not-allowed;
 }
 
 .ios-slide-indicator {
   background: rgba(255, 255, 255, 0.2);
-  width: 32px;
-  height: 32px;
-  border-radius: 16px;
+  width: 28px;
+  height: 28px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 /* iOS Bottom Tab Navigation */
@@ -313,8 +358,8 @@ body {
   border-top: 0.5px solid #E5E5EA;
   display: flex;
   justify-content: space-around;
-  padding: 12px 0;
-  padding-bottom: calc(12px + env(safe-area-inset-bottom));
+  padding: 10px 0;
+  padding-bottom: calc(10px + env(safe-area-inset-bottom));
   z-index: 1000;
 }
 
@@ -329,8 +374,8 @@ body {
 }
 
 .ios-tab-icon {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -351,7 +396,7 @@ body {
   transform: translateY(-2px);
 }
 
-/* iOS Auth Styles */
+/* iOS Auth Styles - Compact */
 .ios-auth-container {
   background: linear-gradient(135deg, #0b2d91, #4661dc);
   min-height: 100vh;
@@ -361,56 +406,56 @@ body {
 
 .ios-auth-content {
   flex: 1;
-  padding: 40px 24px;
+  padding: 32px 20px;
   display: flex;
   flex-direction: column;
 }
 
 .ios-auth-header {
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 40px;
 }
 
 .ios-company-logo {
   position: relative;
-  width: 100px;
-  height: 100px;
-  margin: 0 auto 24px;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
 }
 
 .ios-company-logo img {
   background-color: white;
   width: 100%;
   height: 100%;
-  border-radius: 24px;
+  border-radius: 20px;
   object-fit: cover;
-  border: 4px solid rgba(255, 255, 255, 0.2);
+  border: 3px solid rgba(255, 255, 255, 0.2);
 }
 
 .ios-company-badge {
   position: absolute;
-  bottom: -8px;
-  right: -8px;
+  bottom: -6px;
+  right: -6px;
   background: #FFFFFF;
-  width: 36px;
-  height: 36px;
-  border-radius: 18px;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #0b2d91;
-  border: 3px solid #0b2d91;
+  border: 2px solid #0b2d91;
 }
 
 .ios-auth-title {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 700;
   color: #FFFFFF;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .ios-auth-subtitle {
-  font-size: 15px;
+  font-size: 14px;
   color: rgba(255, 255, 255, 0.8);
 }
 
@@ -419,16 +464,16 @@ body {
 }
 
 .ios-input-group {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .ios-input-label {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 8px;
+  gap: 6px;
+  margin-bottom: 6px;
   color: rgba(255, 255, 255, 0.9);
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
 }
 
@@ -438,11 +483,11 @@ body {
 
 .ios-text-input {
   width: 100%;
-  padding: 16px;
+  padding: 14px;
   background: rgba(255, 255, 255, 0.12);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
-  font-size: 17px;
+  border-radius: 10px;
+  font-size: 16px;
   color: #FFFFFF;
   transition: all 0.2s ease;
 }
@@ -460,22 +505,22 @@ body {
 .ios-forgot-link {
   display: block;
   text-align: right;
-  margin-top: 8px;
+  margin-top: 6px;
   color: rgba(255, 255, 255, 0.7);
-  font-size: 15px;
+  font-size: 14px;
   text-decoration: none;
 }
 
 .ios-remember-group {
-  margin: 24px 0;
+  margin: 20px 0;
 }
 
 .ios-checkbox {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   color: rgba(255, 255, 255, 0.9);
-  font-size: 15px;
+  font-size: 14px;
   cursor: pointer;
 }
 
@@ -484,10 +529,10 @@ body {
 }
 
 .ios-checkmark {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   border: 2px solid rgba(255, 255, 255, 0.4);
-  border-radius: 6px;
+  border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -502,21 +547,21 @@ body {
 .ios-checkbox input:checked + .ios-checkmark::after {
   content: '✓';
   color: white;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .ios-primary-button {
   width: 100%;
-  padding: 18px;
+  padding: 16px;
   background: #FFFFFF;
   border: none;
-  border-radius: 14px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 6px;
   color: #0b2d91;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -529,9 +574,9 @@ body {
 
 .ios-auth-footer {
   text-align: center;
-  margin-top: 32px;
+  margin-top: 28px;
   color: rgba(255, 255, 255, 0.7);
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .ios-link {
@@ -540,15 +585,15 @@ body {
   text-decoration: none;
 }
 
-/* iOS Profile Styles */
+/* iOS Profile Styles - Compact */
 .ios-profile-header {
-  padding: 16px;
+  padding: 14px;
   background: #FFFFFF;
   border-bottom: 0.5px solid #C6C6C8;
 }
 
 .ios-profile-title {
-  font-size: 34px;
+  font-size: 28px;
   font-weight: 700;
   color: #1C1C1E;
 }
@@ -560,8 +605,8 @@ body {
 .ios-profile-avatar {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-bottom: 24px;
+  gap: 14px;
+  margin-bottom: 20px;
 }
 
 .ios-avatar-large {
@@ -574,7 +619,7 @@ body {
 }
 
 .ios-profile-name {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
   color: #1C1C1E;
   margin-bottom: 4px;
@@ -584,7 +629,7 @@ body {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 15px;
+  font-size: 14px;
   color: #8E8E93;
 }
 
@@ -592,8 +637,8 @@ body {
   display: flex;
   align-items: center;
   background: #F2F2F7;
-  border-radius: 12px;
-  padding: 16px;
+  border-radius: 10px;
+  padding: 14px;
 }
 
 .ios-stat {
@@ -602,50 +647,50 @@ body {
 }
 
 .ios-stat-value {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
   color: #1C1C1E;
   margin-bottom: 4px;
 }
 
 .ios-stat-label {
-  font-size: 13px;
+  font-size: 12px;
   color: #8E8E93;
 }
 
 .ios-stat-divider {
   width: 0.5px;
-  height: 40px;
+  height: 36px;
   background: #E5E5EA;
 }
 
-/* iOS Settings */
+/* iOS Settings - Compact */
 .ios-settings-section {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .ios-section-title {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
   color: #1C1C1E;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .ios-section-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .ios-section-note {
-  font-size: 13px;
+  font-size: 12px;
   color: #8E8E93;
 }
 
 .ios-settings-list {
   background: #FFFFFF;
-  border-radius: 12px;
+  border-radius: 10px;
   overflow: hidden;
   border: 0.5px solid #E5E5EA;
 }
@@ -653,7 +698,7 @@ body {
 .ios-settings-item {
   display: flex;
   align-items: center;
-  padding: 16px;
+  padding: 14px;
   border-bottom: 0.5px solid #E5E5EA;
   cursor: pointer;
   transition: background 0.2s ease;
@@ -668,26 +713,26 @@ body {
 }
 
 .ios-settings-icon {
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   background: #F2F2F7;
-  border-radius: 8px;
+  border-radius: 7px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 12px;
+  margin-right: 10px;
   color: #007AFF;
 }
 
 .ios-settings-item span {
   flex: 1;
-  font-size: 17px;
+  font-size: 16px;
   color: #1C1C1E;
 }
 
 .ios-info-list {
   background: #FFFFFF;
-  border-radius: 12px;
+  border-radius: 10px;
   overflow: hidden;
   border: 0.5px solid #E5E5EA;
 }
@@ -696,20 +741,20 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px;
-  min-height: 56px;
+  padding: 14px;
+  min-height: 52px;
 }
 
 .ios-info-label {
-  font-size: 17px;
+  font-size: 16px;
   color: #8E8E93;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
 .ios-info-value {
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 500;
   color: #1C1C1E;
   text-align: right;
@@ -718,79 +763,13 @@ body {
 .ios-info-divider {
   height: 0.5px;
   background: #E5E5EA;
-  margin: 0 16px;
+  margin: 0 14px;
 }
 
 /* iOS Chevrron */
 .ios-chevron {
   color: #C6C6C8;
 }
-
-/* Responsive */
-@media (max-width: 375px) {
-  .ios-time-value {
-    font-size: 38px;
-  }
-  
-  .ios-header-title, .ios-profile-title {
-    font-size: 30px;
-  }
-}
-
-/* iOS Dark Mode Support */
-@media (prefers-color-scheme: dark) {
-  body {
-    background: #000000;
-    color: #FFFFFF;
-  }
-  
-  .ios-container, .ios-profile-container {
-    background: #000000;
-  }
-  
-  .ios-header, .ios-widget-card, 
-  .ios-list-card, .ios-profile-card,
-  .ios-settings-list, .ios-info-list {
-    background: #1C1C1E;
-    border-color: #38383A;
-  }
-  
-  .ios-header-title, .ios-profile-title,
-  .ios-list-title, .ios-section-title,
-  .ios-list-item-right, .ios-info-value,
-  .ios-settings-item span {
-    color: #FFFFFF;
-  }
-  
-  .ios-header-subtitle, .ios-time-label,
-  .ios-section-note, .ios-info-label {
-    color: #98989D;
-  }
-  
-  .ios-time-value {
-    color: #FFFFFF;
-  }
-  
-  .ios-time-separator {
-    color: #38383A;
-  }
-  
-  .ios-map-placeholder {
-    background: #1C1C1E;
-  }
-  
-  .ios-bottom-tab {
-    background: rgba(28, 28, 30, 0.95);
-    border-color: #38383A;
-  }
-}
-
-
-
-
-
-
-/* Add to existing App.css */
 
 /* Loading Spinner */
 .ios-loading {
@@ -802,13 +781,13 @@ body {
 }
 
 .ios-spinner {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border: 3px solid #F2F2F7;
   border-top-color: #007AFF;
   border-radius: 50%;
   animation: ios-spin 1s linear infinite;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 @keyframes ios-spin {
@@ -821,73 +800,41 @@ body {
   background: rgba(255, 59, 48, 0.1);
   border: 1px solid rgba(255, 59, 48, 0.2);
   color: #FF3B30;
-  padding: 12px 16px;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  font-size: 14px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  font-size: 13px;
   text-align: center;
 }
 
-/* User Badge */
-.ios-user-badge {
-  background: #F2F2F7;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 13px;
-  color: #8E8E93;
-  margin-top: 8px;
-  display: inline-block;
-}
-
-/* Green Action Button */
-.ios-action-button-green {
-  background: linear-gradient(135deg, #34C759, #5CDB7C);
-}
-
-/* Secondary Action Button */
-.ios-action-button-secondary {
-  background: #8E8E93;
-}
-
-/* Disabled Button State */
-.ios-action-button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-
-
-
-
-
-/* Location Permission Banner */
+/* Location Permission Banner - Compact */
 .ios-location-permission-banner {
   background: linear-gradient(135deg, #FF9500, #FFA940);
   color: white;
-  border-radius: 12px;
-  padding: 16px;
-  margin-bottom: 16px;
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 10px;
 }
 
 .ios-permission-content {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   flex: 1;
 }
 
 .ios-permission-content h4 {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 
 .ios-permission-content p {
-  font-size: 14px;
+  font-size: 13px;
   opacity: 0.9;
 }
 
@@ -895,9 +842,9 @@ body {
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: white;
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 14px;
+  padding: 6px 14px;
+  border-radius: 16px;
+  font-size: 13px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -920,13 +867,13 @@ body {
 }
 
 .ios-badge {
-  font-size: 12px;
-  padding: 4px 10px;
-  border-radius: 20px;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 12px;
   font-weight: 500;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 3px;
 }
 
 .ios-badge-green {
@@ -945,25 +892,25 @@ body {
 .ios-location-error {
   background: rgba(255, 59, 48, 0.05);
   border: 1px solid rgba(255, 59, 48, 0.1);
-  border-radius: 12px;
-  padding: 12px;
+  border-radius: 10px;
+  padding: 10px;
   text-align: center;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .ios-location-error p {
   color: #FF3B30;
-  margin-bottom: 12px;
-  font-size: 14px;
+  margin-bottom: 10px;
+  font-size: 13px;
 }
 
 .ios-refresh-button {
   background: #007AFF;
   color: white;
   border: none;
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 14px;
+  padding: 6px 14px;
+  border-radius: 16px;
+  font-size: 13px;
   font-weight: 500;
   cursor: pointer;
 }
@@ -972,145 +919,104 @@ body {
   opacity: 0.9;
 }
 
-/* Location Coordinates */
-.ios-location-coords {
-  font-size: 12px;
-  color: #8E8E93;
-  margin-top: 4px;
-  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
-}
-
-.ios-accuracy {
-  background: #F2F2F7;
-  padding: 2px 8px;
-  border-radius: 10px;
-  margin-left: 8px;
-  font-size: 11px;
-  color: #8E8E93;
-}
-
-/* Location Refresh Button */
-.ios-location-refresh {
-  background: #F2F2F7;
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  color: #007AFF;
-  transition: all 0.2s ease;
-}
-
-.ios-location-refresh:hover {
-  background: #E5E5EA;
-}
-
-.ios-location-refresh:active {
-  transform: scale(0.95);
-}
-
-.ios-location-refresh:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-/* Status Indicator */
-.ios-status-indicator {
-  margin-top: 16px;
-  padding-top: 12px;
-  border-top: 0.5px solid #E5E5EA;
-  font-size: 14px;
-  color: #8E8E93;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.ios-status-active {
-  color: #34C759;
-  font-weight: 600;
-}
-
-.ios-status-inactive {
-  color: #FF3B30;
-  font-weight: 600;
-}
-
-/* Updated Map Placeholder */
-.ios-map-placeholder {
-  height: 100px;
-  background: linear-gradient(135deg, #F2F2F7, #E5E5EA);
+/* Completion Card - Compact */
+.ios-completion-card {
+  background: #FFFFFF;
   border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  color: #8E8E93;
-  font-size: 14px;
+  padding: 16px;
+  margin-bottom: 10px;
   text-align: center;
-  margin-top: 12px;
+  border: 0.5px solid #E5E5EA;
 }
 
-.ios-map-placeholder small {
+.ios-completion-icon {
+  margin-bottom: 12px;
+}
+
+.ios-completion-content h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1C1C1E;
+  margin-bottom: 6px;
+}
+
+.ios-completion-content p {
+  font-size: 14px;
+  color: #8E8E93;
+  margin-bottom: 12px;
+}
+
+.ios-summary {
+  background: #F2F2F7;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.ios-summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.ios-summary-item:last-child {
+  margin-bottom: 0;
+}
+
+.ios-summary-item span {
+  font-size: 14px;
+  color: #8E8E93;
+}
+
+.ios-summary-item strong {
+  font-size: 14px;
+  color: #1C1C1E;
+  font-weight: 600;
+}
+
+.ios-note {
   font-size: 12px;
-  opacity: 0.7;
+  color: #8E8E93;
 }
 
-/* GPS Icon Animation */
-@keyframes pulse {
-  0% { opacity: 1; }
-  50% { opacity: 0.5; }
-  100% { opacity: 1; }
+/* Message Box */
+.ios-message-box {
+  background: #F2F2F7;
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
 }
 
-.ios-badge-green svg {
-  animation: pulse 2s infinite;
+.ios-message-box p {
+  font-size: 14px;
+  color: #1C1C1E;
+  margin-bottom: 4px;
 }
 
-/* iOS Green Button */
-.ios-action-button-green {
-  background: linear-gradient(135deg, #34C759, #5CDB7C) !important;
+.ios-message-box small {
+  font-size: 12px;
+  color: #8E8E93;
 }
 
-.ios-action-button-green:hover {
-  background: linear-gradient(135deg, #2DB24C, #4EC768) !important;
-}
-
-/* iOS Red Button */
-.ios-action-button-red {
-  background: linear-gradient(135deg, #FF3B30, #FF6255) !important;
-}
-
-.ios-action-button-red:hover {
-  background: linear-gradient(135deg, #E0281E, #FF4A3D) !important;
-}
-
-/* iOS Secondary Button */
-.ios-action-button-secondary {
-  background: #8E8E93 !important;
-}
-
-.ios-action-button-secondary:hover {
-  background: #7A7A7E !important;
-}
-
-/* Disabled Button State */
-.ios-action-button:disabled {
-  opacity: 0.6 !important;
-  cursor: not-allowed !important;
-  transform: none !important;
-}
-
-/* Responsive Improvements */
+/* Responsive */
 @media (max-width: 375px) {
+  .ios-time-value {
+    font-size: 32px;
+  }
+  
+  .ios-header-title, .ios-profile-title {
+    font-size: 20px;
+  }
+  
+  .ios-time-separator {
+    font-size: 32px;
+  }
+  
   .ios-location-permission-banner {
     flex-direction: column;
     text-align: center;
-    gap: 12px;
+    gap: 10px;
   }
   
   .ios-permission-content {
@@ -1121,10 +1027,85 @@ body {
   .ios-location-preview {
     flex-direction: column;
     text-align: center;
-    gap: 12px;
+    gap: 10px;
   }
   
   .ios-location-details {
     text-align: center;
+  }
+}
+
+/* iOS Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #000000;
+    color: #FFFFFF;
+  }
+  
+  .ios-container, .ios-profile-container {
+    background: #000000;
+  }
+  
+  .ios-header, .ios-widget-card, 
+  .ios-list-card, .ios-profile-card,
+  .ios-settings-list, .ios-info-list,
+  .ios-completion-card, .ios-message-box {
+    background: #1C1C1E;
+    border-color: #38383A;
+  }
+  
+  .ios-header-title, .ios-profile-title,
+  .ios-list-title, .ios-section-title,
+  .ios-list-item-right, .ios-info-value,
+  .ios-settings-item span, .ios-summary-item strong,
+  .ios-message-box p {
+    color: #FFFFFF;
+  }
+  
+  .ios-header-subtitle, .ios-time-label,
+  .ios-section-note, .ios-info-label,
+  .ios-summary-item span, .ios-note,
+  .ios-message-box small {
+    color: #98989D;
+  }
+  
+  .ios-time-value {
+    color: #FFFFFF;
+  }
+  
+  .ios-time-separator {
+    color: #38383A;
+  }
+  
+  .ios-location-preview, .ios-summary {
+    background: #2C2C2E;
+  }
+  
+  .ios-bottom-tab {
+    background: rgba(28, 28, 30, 0.95);
+    border-color: #38383A;
+  }
+  
+  .ios-user-badge {
+    background: #2C2C2E;
+    color: #98989D;
+  }
+  
+  .ios-location-icon {
+    background: #2C2C2E;
+  }
+  
+  .ios-location-refresh {
+    background: #2C2C2E;
+  }
+  
+  .ios-badge-green {
+    background: rgba(52, 199, 89, 0.15);
+    border-color: rgba(52, 199, 89, 0.3);
+  }
+  
+  .ios-badge-red {
+    background: rgba(255, 59, 48, 0.15);
+    border-color: rgba(255, 59, 48, 0.3);
   }
 }
