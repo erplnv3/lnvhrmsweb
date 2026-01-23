@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Base URL
 // export const BASE_URL = 'http://66.116.199.85:8080/hrms1/api/v1';
-export const BASE_URL ='http://192.168.1.221:8080/api'
+export const BASE_URL ='http://192.168.1.221:8080/api/v1';
 // Token storage functions
 export const tokenStorage = {
   getToken: () => {
