@@ -1,0 +1,6 @@
+// Step 1: Create vercel.json in your project root
+{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
