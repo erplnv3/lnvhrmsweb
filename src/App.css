@@ -1109,3 +1109,43 @@ body {
     border-color: rgba(255, 59, 48, 0.3);
   }
 }
+
+
+
+
+@media (prefers-color-scheme: dark) {
+  /* Location text colors - White in dark mode */
+  .ios-location-address {
+    color: #FFFFFF !important;
+  }
+  
+  .ios-location-coords {
+    color: #D1D1D6 !important;
+  }
+  
+  /* Location accuracy badge */
+  .ios-accuracy {
+    background: #3A3A3C !important;
+    color: #D1D1D6 !important;
+  }
+  
+  /* Location icon background */
+  .ios-location-icon {
+    background: #2C2C2E !important;
+  }
+  
+  /* Location preview background */
+  .ios-location-preview {
+    background: #2C2C2E !important;
+  }
+  
+  /* Location refresh button */
+  .ios-location-refresh {
+    background: #3A3A3C !important;
+    color: #0A84FF !important;
+  }
+  
+  .ios-location-refresh:hover {
+    background: #48484A !important;
+  }
+}
