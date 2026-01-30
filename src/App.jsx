@@ -922,12 +922,12 @@ const NoniOSCheckComponent = () => {
             You can continue using the app, but some features may be limited.
           </p>
           
-          {/* <button 
-            className="ios-button primary"
+          <p 
+            // className="ios-button primary"
             onClick={() => setShowWarning(false)}
           >
-            Continue Anyway
-          </button> */}
+            .
+          </p>
           
           <button 
             className="ios-button secondary"
